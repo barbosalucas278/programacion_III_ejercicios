@@ -29,7 +29,8 @@ if (RegistrarUsuario($usuario, $ruta, $foto)) {
 function RegistrarUsuario($usuario, $ruta, $foto)
 {
     $ret = false;
-    $destinoFoto = "./Usuario/Fotos/" . $usuario->GetId() . "-" . $foto["name"];
+    $destinoFoto = "./Usuario/Fotos/" . $usuario->GetId() . substr($foto["name"], strpos($foto["name"], "."));
+    echo $foto["type"];
     if (!is_a($usuario, "Usuario")) {
         return $ret;
     }
