@@ -13,7 +13,7 @@ $mail = $_POST["email"];
 
 $usuario = new Usuario($nombre, $clave, $mail);
 
-if ($usuario->GuardarUsuario()) {
+if ($usuario->GuardarUsuario("./registros.csv")) {
     echo "Se agrego correctamente";
     return http_response_code(200);
 } else {

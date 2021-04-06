@@ -19,10 +19,10 @@ class Usuario
         return $datos;
     }
 
-    public function GuardarUsuario()
+    public function GuardarUsuario($ruta)
     {
         $ret = false;
-        $archivo = fopen("./registros.csv", "a");
+        $archivo = fopen($ruta, "a");
         if ($archivo != null) {
             $datos = $this->ToCvs();
             if (fwrite($archivo, $datos,)) {
